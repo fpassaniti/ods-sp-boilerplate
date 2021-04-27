@@ -1,0 +1,21 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "prettier --check \"src/**/*.js\""
+  },
+  "dependencies": {
+    "@opendatasoft/api-client": "0.1.0",
+    "@opendatasoft/visualizations": "0.2.0",
+    "bulma": "^0.9.1",
+    "rollup-plugin-scss": "^2.6.1"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-sass": "^1.1.1",
+    "prettier": "^2.0.5",
+    "snowpack": "^2.17.1"
+  }
+}

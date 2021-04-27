@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ods-widgets">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Web site created using create-snowpack-app" />
+  <link rel="stylesheet" type="text/css" href="https://static.opendatasoft.com/ods-widgets/latest-v2/ods-widgets.css" />
+  <link rel="stylesheet" type="text/css" href="/dist/index.css" />
+  
+  <title>Snowpack App with ods widgets</title>
+  
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-sanitize.js"></script>
+  <script src="https://static.opendatasoft.com/ods-widgets/latest-v2/ods-widgets.js"></script>
+  <script src="https://help.opendatasoft.com/widgets/grunt-scripts/docs-load-css.js"></script>    
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="title">
+      API V2 Call
+    </h2>
+    <h3 class="subtitle">
+      Direct call from Api-Client sdk, result processed in Javascript
+    </h3>
+    <div class="content" id="results"></div>  
+  </div> 
+  
+  <hr/>
+  
+  <div ng-app="ods-widgets">
+    <div class="container">
+      <h2 class="title">
+        ods-widgets (API V1)
+      </h2>
+      <h3 class="subtitle">
+        ods-analysis widget, results printed with angularjs expression
+      </h3>
+      <ods-dataset-context context="ctx" 
+      ctx-domain="documentation-resources" 
+      ctx-dataset="doc-geonames-cities-5000"
+      ctx-parameters="{'refine.country_code':'FR'}">
+      <div class="content" 
+      ods-adv-analysis="results"
+      ods-adv-analysis-context="ctx"
+      ods-adv-analysis-select="sum(population) as population"
+      ods-adv-analysis-group-by="name as city"
+      ods-adv-analysis-order-by="-population"
+      ods-adv-analysis-limit="10">
+      <ul>
+        <li ng-repeat="result in results">
+          {{ result.city }} ({{ result.population | number }} habitants)
+        </li>
+      </ul>
+    </div>
+      </ods-dataset-context>
+    </div>
+  </div>
+</body>
+
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<script type="module" src="/dist/index.js"></script>
+</body>
+</html>
