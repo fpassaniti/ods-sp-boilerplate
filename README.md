@@ -1,8 +1,12 @@
-# ods starterkit with snowpack
+# ODS starter-kit with snowpack
 
-> ✨ Test an play with widgets and sdks easily
+> ✨ Test and play with widgets and ODS SDKs easily
 
-## Available cmds
+## Available commands
+
+### npm install
+
+Install all dependencies, must be run first
 
 ### npm run dev
 
